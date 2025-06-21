@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-satoshi: var(--font-satoshi), sans-serif;
+  --color-text: #2c3440;
+  --color-background: #fffaf7;
+  --color-primary: #7e9aa1;
+  --color-secondary: #d2dce6;
+  --color-accent: #e60012;
+
+  --color-text-50: #f0f2f5;
+  --color-text-100: #e1e5ea;
+  --color-text-200: #c2cad6;
+  --color-text-300: #a4b0c1;
+  --color-text-400: #8695ac;
+  --color-text-500: #677b98;
+  --color-text-600: #536279;
+  --color-text-700: #3e4a5b;
+  --color-text-800: #29313d;
+  --color-text-900: #15191e;
+  --color-text-950: #0a0c0f;
+
+  --color-background-50: #ffefe5;
+  --color-background-100: #ffdfcc;
+  --color-background-200: #ffbe99;
+  --color-background-300: #ff9e66;
+  --color-background-400: #ff7e33;
+  --color-background-500: #ff5e00;
+  --color-background-600: #cc4b00;
+  --color-background-700: #993800;
+  --color-background-800: #662500;
+  --color-background-900: #331300;
+  --color-background-950: #1a0900;
+
+  --color-primary-50: #f0f3f4;
+  --color-primary-100: #e1e8ea;
+  --color-primary-200: #c4d1d4;
+  --color-primary-300: #a6babf;
+  --color-primary-400: #89a3a9;
+  --color-primary-500: #6b8c94;
+  --color-primary-600: #567076;
+  --color-primary-700: #405459;
+  --color-primary-800: #2b383b;
+  --color-primary-900: #151c1e;
+  --color-primary-950: #0b0e0f;
+
+  --color-secondary-50: #eff2f6;
+  --color-secondary-100: #dee6ed;
+  --color-secondary-200: #bdccdb;
+  --color-secondary-300: #9cb2c9;
+  --color-secondary-400: #7b99b7;
+  --color-secondary-500: #5b7fa4;
+  --color-secondary-600: #486684;
+  --color-secondary-700: #364c63;
+  --color-secondary-800: #243342;
+  --color-secondary-900: #121921;
+  --color-secondary-950: #090d10;
+
+  --color-accent-50: #ffe5e8;
+  --color-accent-100: #ffccd0;
+  --color-accent-200: #ff99a1;
+  --color-accent-300: #ff6673;
+  --color-accent-400: #ff3344;
+  --color-accent-500: #ff0015;
+  --color-accent-600: #cc0011;
+  --color-accent-700: #99000d;
+  --color-accent-800: #660008;
+  --color-accent-900: #330004;
+  --color-accent-950: #1a0002;
+}
