@@ -2,33 +2,33 @@
 
 import { Project } from "@/components/home/Project";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function Work() {
   const sectionRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Sync isMobile on mount + resizes
+  useEffect(() => {
+    function onResize() {
+      setIsMobile(window.innerWidth <= 1024);
+    }
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start 0.5", "end start"],
   });
 
-  const headingSizeRaw = useTransform(
+  const headingScaleRaw = useTransform(
     scrollYProgress,
     [0, 0.1],
-    ["6rem", "2rem"],
+    isMobile ? [1, 1] : [3, 1],
   );
-  const headingSize = useSpring(headingSizeRaw, {
-    stiffness: 100,
-    damping: 20,
-  });
-
-  const headingLeadingRaw = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    ["6rem", "2rem"],
-  );
-  const headingLeading = useSpring(headingLeadingRaw, {
+  const headingScale = useSpring(headingScaleRaw, {
     stiffness: 100,
     damping: 20,
   });
@@ -36,7 +36,7 @@ export function Work() {
   const headingWeightRaw = useTransform(
     scrollYProgress,
     [0, 0.1],
-    ["900", "700"],
+    isMobile ? ["700", "700"] : ["900", "700"],
   );
   const headingWeight = useSpring(headingWeightRaw, {
     stiffness: 100,
@@ -45,8 +45,8 @@ export function Work() {
 
   const imageOpacityRaw = useTransform(
     scrollYProgress,
-    [0.1, 0.15], // or adjust these numbers based on when you want the image to fade in
-    [0, 1],
+    [0.1, 0.15],
+    isMobile ? [1, 1] : [0, 1],
   );
   const imageOpacity = useSpring(imageOpacityRaw, {
     stiffness: 100,
@@ -54,21 +54,23 @@ export function Work() {
   });
 
   return (
-    <section ref={sectionRef} className="relative flex">
+    <section
+      ref={sectionRef}
+      className="relative flex flex-col gap-8 lg:flex-row"
+    >
       <motion.h2
         style={{
-          fontSize: headingSize,
-          lineHeight: headingLeading,
+          scale: headingScale,
           fontWeight: headingWeight,
         }}
-        className="sticky top-30 h-[50svh] shrink-0 leading-24 tracking-tight"
+        className="shrink-0 origin-top-left text-3xl leading-7 font-black tracking-tight lg:sticky lg:top-30 lg:h-[50svh] lg:text-2xl lg:leading-6 lg:font-normal xl:text-3xl xl:leading-7"
       >
         Here's some of <br /> the good things <br /> I've made
-        <span className="text-accent">.</span>
+        <span className="text-accent">:</span>
       </motion.h2>
       <motion.div
         style={{ opacity: imageOpacity }}
-        className="sna mt-120 flex snap-y snap-mandatory flex-col gap-16"
+        className="flex snap-y snap-mandatory flex-col gap-8 lg:mt-120 lg:gap-8 xl:gap-24"
       >
         <Project
           link={"https://miragefx-website.vercel.app"}

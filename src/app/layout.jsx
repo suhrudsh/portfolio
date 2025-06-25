@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <body className="bg-background text-text font-satoshi">
         <Navbar />
         <LenisProvider>
-          <main className="px-24">{children}</main>
+          <main className="px-6 lg:px-16 xl:px-24">{children}</main>
         </LenisProvider>
         <Footer />
       </body>
