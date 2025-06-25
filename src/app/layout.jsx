@@ -1,6 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
-import Navbar from "./components/Navbar";
+import Navbar from "@/components/Navbar";
+import { LenisProvider } from "@/components/LenisProvider";
 
 export const metadata = {
   title: "Suhrud Portfolio",
@@ -15,10 +16,12 @@ const satoshi = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${satoshi.variable} bg-background text-text px-24`}>
+    <html lang="en" className={satoshi.variable}>
+      <body className="bg-background text-text font-satoshi">
         <Navbar />
-        <main>{children}</main>
+        <LenisProvider>
+          <main className="px-24">{children}</main>
+        </LenisProvider>
       </body>
     </html>
   );
