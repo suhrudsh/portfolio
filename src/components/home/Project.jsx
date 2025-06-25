@@ -38,7 +38,9 @@ export function Project({ link, imgSrc, imgAlt, title, children }) {
         {children && (
           <>
             <br />
-            <span className="text-primary inline">Tap to visit →</span>
+            <span className="text-primary inline underline underline-offset-2">
+              Visit →
+            </span>
           </>
         )}
       </p>
