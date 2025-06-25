@@ -7,11 +7,15 @@ import { useEffect, useRef, useState } from "react";
 export function Work() {
   const sectionRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isLg, setIsLg] = useState(false);
+  const [isXl, setIsXl] = useState(false);
 
-  // Sync isMobile on mount + resizes
   useEffect(() => {
     function onResize() {
-      setIsMobile(window.innerWidth <= 1024);
+      const w = window.innerWidth;
+      setIsMobile(w <= 1024);
+      setIsLg(w > 1024 && w <= 1280);
+      setIsXl(w > 1280);
     }
     onResize();
     window.addEventListener("resize", onResize);
@@ -23,12 +27,28 @@ export function Work() {
     offset: ["start 0.5", "end start"],
   });
 
-  const headingScaleRaw = useTransform(
+  const fromSize = isMobile ? "1.875rem" : isLg ? "3.75rem" : "6rem";
+  const toSize = isMobile ? "1.875rem" : isLg ? "2rem" : "2.5rem";
+
+  const headingSizeRaw = useTransform(
     scrollYProgress,
     [0, 0.1],
-    isMobile ? [1, 1] : [3, 1],
+    [fromSize, toSize],
   );
-  const headingScale = useSpring(headingScaleRaw, {
+  const headingSize = useSpring(headingSizeRaw, {
+    stiffness: 100,
+    damping: 20,
+  });
+
+  const fromLeading = isMobile ? "1.875rem" : isLg ? "3.75rem" : "6rem";
+  const toLeading = isMobile ? "1.875rem" : isLg ? "2rem" : "2.5rem";
+
+  const headingLeadingRaw = useTransform(
+    scrollYProgress,
+    [0, 0.1],
+    [fromLeading, toLeading],
+  );
+  const headingLeading = useSpring(headingLeadingRaw, {
     stiffness: 100,
     damping: 20,
   });
@@ -60,10 +80,11 @@ export function Work() {
     >
       <motion.h2
         style={{
-          scale: headingScale,
+          fontSize: headingSize,
           fontWeight: headingWeight,
+          lineHeight: headingLeading,
         }}
-        className="shrink-0 origin-top-left text-3xl leading-7 font-black tracking-tight lg:sticky lg:top-30 lg:h-[50svh] lg:text-2xl lg:leading-6 lg:font-normal xl:text-3xl xl:leading-7"
+        className="shrink-0 origin-top-left text-3xl leading-7 font-black tracking-tight lg:sticky lg:top-30 lg:h-[50svh]"
       >
         Here's some of <br /> the good things <br /> I've made
         <span className="text-accent">:</span>
