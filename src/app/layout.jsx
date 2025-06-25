@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 const satoshi = localFont({
-  src: "./fonts/Satoshi-Variable.woff",
+  src: "./fonts/Satoshi-Variable.woff2",
   variable: "--font-satoshi",
   display: "swap",
 });
