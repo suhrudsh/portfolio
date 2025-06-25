@@ -9,6 +9,11 @@ export function Work() {
   const [isMobile, setIsMobile] = useState(false);
   const [isLg, setIsLg] = useState(false);
   const [isXl, setIsXl] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     function onResize() {
@@ -90,7 +95,8 @@ export function Work() {
         <span className="text-accent">:</span>
       </motion.h2>
       <motion.div
-        style={{ opacity: imageOpacity }}
+        initial={false}
+        style={mounted ? { opacity: imageOpacity } : {}}
         className="flex snap-y snap-mandatory flex-col gap-8 lg:mt-120 lg:gap-8 xl:gap-24"
       >
         <Project
