@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import { LenisProvider } from "@/components/LenisProvider";
+import { Footer } from "@/components/Footer";
 
 export const metadata = {
   title: "Suhrud Portfolio",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <LenisProvider>
           <main className="px-24">{children}</main>
         </LenisProvider>
+        <Footer />
       </body>
     </html>
   );
