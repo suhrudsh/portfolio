@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function Project({ link, imgSrc, imgAlt, title, children }) {
+export function FeaturedProject({ link, imgSrc, imgAlt, title, children }) {
   return (
     <a
       href={link}
@@ -22,8 +22,8 @@ export function Project({ link, imgSrc, imgAlt, title, children }) {
         {children && (
           <>
             <br />
-            <span className="text-primary inline underline underline-offset-2">
-              Visit →
+            <span className="text-primary-400 group-hover:text-primary inline transition-colors duration-300 ease-in-out">
+              Click to Visit →
             </span>
           </>
         )}
