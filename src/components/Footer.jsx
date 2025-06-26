@@ -25,7 +25,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="transition-transform duration-300 ease-in-out hover:scale-110"
             >
-              <FontAwesomeIcon icon={faGithub} className="size-7" />
+              <FontAwesomeIcon icon={faGithub} className="text-3xl" />
             </a>
             <a
               href="https://linkedin.com/in/suhrudshringarputale"
@@ -33,13 +33,13 @@ export function Footer() {
               rel="noopener noreferrer"
               className="transition-transform duration-300 ease-in-out hover:scale-110"
             >
-              <FontAwesomeIcon icon={faLinkedin} className="size-7" />
+              <FontAwesomeIcon icon={faLinkedin} className="text-3xl" />
             </a>
             <a
               href="mailto:suhrudsh@gmail.com"
               className="transition-transform duration-300 ease-in-out hover:scale-110"
             >
-              <FontAwesomeIcon icon={faEnvelope} className="size-7" />
+              <FontAwesomeIcon icon={faEnvelope} className="text-3xl" />
             </a>
           </div>
           <p className="text-muted-foreground text-base">
