@@ -1,10 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import ProjectsList from "@/components/home/ProjectsList";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
-export const metadata = {
-  title: "Home | Suhrud",
-  description: "Multidisciplinary designer portfolio.",
-};
 
 export default async function HomePage() {
   const username = "suhrudsh";
