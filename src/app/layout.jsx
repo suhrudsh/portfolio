@@ -11,7 +11,7 @@ const satoshi = localFont({
 });
 
 export const metadata = {
-  title: "Suhrud | Multidisciplinary Designer",
+  title: "Suhrud Shringarputale | Multidisciplinary Designer",
   description:
     "Suhrud is a multidisciplinary designer blending 3D, web, and UX to build interactive and meaningful experiences.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata = {
     "Portfolio",
   ],
   openGraph: {
-    title: "Suhrud | Multidisciplinary Designer",
+    title: "Suhrud Shringarputale | Multidisciplinary Designer",
     description:
       "Suhrud is a designer and developer crafting immersive web experiences at the intersection of design and code.",
     url: "https://suhrud.vercel.app", // Replace with your live domain
@@ -42,7 +42,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suhrud | Multidisciplinary Designer",
+    title: "Suhrud Shringarputale | Multidisciplinary Designer",
     description:
       "Portfolio of Suhrud – designer and frontend developer focused on 3D and interactive experiences.",
     images: ["/og-image.jpg"],
