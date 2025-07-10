@@ -98,7 +98,7 @@ export function FeaturedProjects() {
         className="flex snap-y snap-mandatory flex-col gap-8 lg:mt-120 lg:gap-8 xl:gap-24"
       >
         <FeaturedProject
-          link={"https://miragefx-website.vercel.app"}
+          link={"https://miragefx.ae"}
           imgSrc={"/images/miragefx-thumbnail.webp"}
           imgAlt={"MirageFX Thumbnail"}
           title={"MirageFX"}
