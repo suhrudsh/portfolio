@@ -17,12 +17,17 @@ export default async function HomePage() {
 
   const repos = await res.json();
 
-  const filteredRepos = repos.filter(
-    (repo) =>
+  const filteredRepos = repos.filter((repo) => {
+    const name = repo.name.toLowerCase();
+
+    return (
       repo.has_pages &&
       !repo.name.includes(username) &&
-      !excludedRepos.includes(repo.name),
-  );
+      !excludedRepos.includes(repo.name) &&
+      !name.startsWith("odin") &&
+      !name.startsWith("frontend-mentor")
+    );
+  });
 
   return (
     <>
