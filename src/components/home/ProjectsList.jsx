@@ -9,28 +9,33 @@ import { useRef, useState } from "react";
 
 export default function ProjectsList({ filteredRepos }) {
   const [currentPage, setCurrentPage] = useState(0);
-
   const scrollRef = useRef(null);
   const groupRefs = useRef([]);
   const username = "suhrudsh";
 
+  // --- Filter out unwanted repos ---
+  const displayRepos = filteredRepos.filter(
+    (repo) =>
+      !repo.name.startsWith("odin") && !repo.name.startsWith("Frontend-Mentor"),
+  );
+
+  // --- Chunk repos into groups of 3 ---
+  const chunkedRepos = [];
+  for (let i = 0; i < displayRepos.length; i += 3) {
+    chunkedRepos.push(displayRepos.slice(i, i + 3));
+  }
+
+  // --- Format names ---
   const formatRepoName = (name) => {
-    let formattedName = name.replace(/-/g, " ");
-    formattedName = formattedName.replace(
-      /\b(Frontend Mentor|Odin|Threejs)\b/gi,
-      "$1:",
-    );
-    formattedName = formattedName
+    return name
+      .replace(/-/g, " ")
+      .replace(/\b(Threejs)\b/gi, "Threejs:") // add colon after "Threejs"
       .split(" ")
-      .map((word) => {
-        if (["etch", "sketch"].includes(word.toLowerCase())) return word;
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      })
-      .join(" ")
-      .replace(/ Etch A Sketch/gi, " Etch-a-Sketch");
-    return formattedName;
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   };
 
+  // --- Scroll logic ---
   const scrollByPage = (dir) => {
     const nextIdx = Math.max(
       0,
@@ -44,21 +49,14 @@ export default function ProjectsList({ filteredRepos }) {
     setCurrentPage(nextIdx);
   };
 
-  // inside your component, below chunkedRepos:
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, offsetWidth } = scrollRef.current;
-    // round to nearest page index:
     const newPage = Math.round(scrollLeft / offsetWidth);
     if (newPage !== currentPage) {
       setCurrentPage(newPage);
     }
   };
-
-  const chunkedRepos = [];
-  for (let i = 0; i < filteredRepos.length; i += 3) {
-    chunkedRepos.push(filteredRepos.slice(i, i + 3));
-  }
 
   return (
     <section className="mt-12 flex w-full flex-col gap-8">
@@ -68,10 +66,10 @@ export default function ProjectsList({ filteredRepos }) {
       </h2>
 
       <div className="flex items-stretch justify-center">
-        {/* Scroll buttons */}
+        {/* Left scroll button */}
         <button
           onClick={() => scrollByPage(-1)}
-          className="bg-background text-text hover:text-accent pointer-events-auto flex cursor-pointer items-center justify-center self-stretch px-4 text-2xl transition-colors"
+          className="bg-background text-text hover:text-accent flex cursor-pointer items-center justify-center self-stretch px-4 text-2xl transition-colors"
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
@@ -86,7 +84,7 @@ export default function ProjectsList({ filteredRepos }) {
             <li
               key={idx}
               ref={(el) => (groupRefs.current[idx] = el)}
-              className="grid w-full shrink-0 snap-start grid-rows-3 flex-col gap-4 lg:grid-cols-3 lg:grid-rows-none"
+              className="grid w-full shrink-0 snap-start grid-rows-3 gap-4 lg:grid-cols-3 lg:grid-rows-none"
             >
               {group.map((repo) => {
                 const pageUrl =
@@ -104,7 +102,7 @@ export default function ProjectsList({ filteredRepos }) {
                     <span className="group-hover:text-accent text-lg font-medium tracking-tight text-balance transition-colors">
                       {formatRepoName(repo.name)}
                     </span>
-                    <span className="text-text-400 group-hover:text-text mt-4 text-sm transition-colors duration-300 ease-in-out">
+                    <span className="text-text-400 group-hover:text-text mt-4 text-sm transition-colors">
                       Click to Visit →
                     </span>
                   </a>
@@ -114,9 +112,10 @@ export default function ProjectsList({ filteredRepos }) {
           ))}
         </ul>
 
+        {/* Right scroll button */}
         <button
           onClick={() => scrollByPage(1)}
-          className="bg-background text-text hover:text-accent pointer-events-auto flex cursor-pointer items-center justify-center self-stretch px-4 text-2xl transition-colors"
+          className="bg-background text-text hover:text-accent flex cursor-pointer items-center justify-center self-stretch px-4 text-2xl transition-colors"
         >
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
