@@ -4,7 +4,13 @@ import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 
 export default async function HomePage() {
   const username = "suhrudsh";
-  const excludedRepos = ["miragefx-website", "streamsync", "lemons-404"];
+  const excludedRepos = [
+    "miragefx-website",
+    "streamsync",
+    "lemons-404",
+    "auralis-cymbals",
+    "nuranest-website",
+  ];
 
   const res = await fetch(`https://api.github.com/users/${username}/repos`, {
     next: { revalidate: 60 * 60 * 24 * 7 }, // Revalidate once a week

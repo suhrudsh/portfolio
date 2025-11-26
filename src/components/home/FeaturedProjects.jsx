@@ -108,6 +108,19 @@ export function FeaturedProjects() {
           puts their work front and center — with minimal typography, a tight
           layout system, and responsive motion tuned for every device.
         </FeaturedProject>
+
+        <FeaturedProject
+          link={"https://suhrudsh.github.io/auralis-cymbals/"}
+          imgSrc={"/images/auralis-cymbals-thumbnail.webp"}
+          imgAlt={"Auralis Cymbals Thumbnail"}
+          title={"Auralis Cymbals"}
+        >
+          Auralis Cymbals is a fictional brand of high-end, handcrafted cymbals.
+          This landing page concept showcases a sleek, modern design with
+          immersive product visuals, interactive elements, and smooth animations
+          to highlight the craftsmanship and quality of the brand.
+        </FeaturedProject>
+
         <FeaturedProject
           link={"https://suhrudsh.github.io/streamsync"}
           imgSrc={"/images/streamsync-thumbnail.webp"}
@@ -120,6 +133,21 @@ export function FeaturedProjects() {
           content sections, smooth scroll-based transitions, and a playful,
           modern design that adapts well to all screen sizes.
         </FeaturedProject>
+
+        <FeaturedProject
+          link={"https://nuranest.ai"}
+          imgSrc={"/images/nuranest-thumbnail.webp"}
+          imgAlt={"Nuranest.ai Thumbnail"}
+          title={"Nuranest.ai"}
+        >
+          Nuranest.ai is an operator-led advisory firm for IT services,
+          software, and PE/VC-backed companies. I built a clean,
+          executive-focused site designed to signal credibility fast — using
+          sharp hierarchy, restrained visuals, and messaging rooted in their
+          advisory-first positioning. A tight, trust-driven build delivered
+          quickly.
+        </FeaturedProject>
+
         <FeaturedProject
           link={"https://suhrudsh.github.io/lemons-404"}
           imgSrc={"/images/lemons-404-thumbnail.webp"}
