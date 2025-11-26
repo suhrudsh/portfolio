@@ -13,12 +13,6 @@ export default function ProjectsList({ filteredRepos }) {
   const groupRefs = useRef([]);
   const username = "suhrudsh";
 
-  // --- Filter out unwanted repos ---
-  // const displayRepos = filteredRepos.filter(
-  //   (repo) =>
-  //     !repo.name.startsWith("odin") && !repo.name.startsWith("Frontend-Mentor"),
-  // );
-
   // --- Chunk repos into groups of 3 ---
   const chunkedRepos = [];
   for (let i = 0; i < filteredRepos.length; i += 3) {
