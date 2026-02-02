@@ -110,6 +110,22 @@ export function FeaturedProjects() {
         </FeaturedProject>
 
         <FeaturedProject
+          link={"https://punedesignfestival.com"}
+          imgSrc={"/images/pdf-thumbnail.webp"}
+          imgAlt={"Pune Design Festival Thumbnail"}
+          title={"Pune Design Festival 2026"}
+        >
+          Pune Design Festival is an annual event celebrating design organised
+          by the Association of Designers of India (ADI). For the 2026 edition,
+          I was one of the volunteers that worked on the website using Framer in
+          order to highlight the information about the festival, including its
+          events and speakers, as well as help boost ticket sales. The theme for
+          this year's festival was "India Lens" and we worked together to create
+          a website based around that theme using appropriate typography, blurs,
+          and animations.
+        </FeaturedProject>
+
+        <FeaturedProject
           link={"https://suhrudsh.github.io/auralis-cymbals/"}
           imgSrc={"/images/auralis-cymbals-thumbnail.webp"}
           imgAlt={"Auralis Cymbals Thumbnail"}
