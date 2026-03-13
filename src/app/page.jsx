@@ -1,6 +1,7 @@
 import { Hero } from "@/components/home/Hero";
 import ProjectsList from "@/components/home/ProjectsList";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
+import { Philosophy } from "@/components/home/Philosophy";
 
 export default async function HomePage() {
   const username = "suhrudsh";
@@ -38,6 +39,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <Philosophy />
       <FeaturedProjects />
       <ProjectsList filteredRepos={filteredRepos} />
     </>

@@ -1,69 +1,23 @@
 "use client";
 
 import { FeaturedProject } from "@/components/home/FeaturedProject";
+import { AnimatedSectionHeading } from "@/components/home/AnimatedSectionHeading";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export function FeaturedProjects() {
+  const isMobile = useIsMobile();
   const sectionRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isLg, setIsLg] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    function onResize() {
-      const w = window.innerWidth;
-      setIsMobile(w <= 1024);
-      setIsLg(w > 1024 && w <= 1280);
-    }
-    onResize();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start 0.5", "end start"],
-  });
-
-  const fromSize = isMobile ? "1.875rem" : isLg ? "3.75rem" : "6rem";
-  const toSize = isMobile ? "1.875rem" : isLg ? "2.25rem" : "2.25rem";
-
-  const headingSizeRaw = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    [fromSize, toSize],
-  );
-  const headingSize = useSpring(headingSizeRaw, {
-    stiffness: 100,
-    damping: 20,
-  });
-
-  const fromLeading = isMobile ? "1.875rem" : isLg ? "3.75rem" : "6rem";
-  const toLeading = isMobile ? "1.875rem" : isLg ? "2.25rem" : "2.25rem";
-
-  const headingLeadingRaw = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    [fromLeading, toLeading],
-  );
-  const headingLeading = useSpring(headingLeadingRaw, {
-    stiffness: 100,
-    damping: 20,
-  });
-
-  const headingWeightRaw = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    isMobile ? ["700", "700"] : ["900", "700"],
-  );
-  const headingWeight = useSpring(headingWeightRaw, {
-    stiffness: 100,
-    damping: 20,
   });
 
   const imageOpacityRaw = useTransform(
@@ -79,19 +33,12 @@ export function FeaturedProjects() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col gap-8 lg:flex-row"
+      className="relative mt-36 flex flex-col gap-8 lg:flex-row"
     >
-      <motion.h2
-        style={{
-          fontSize: headingSize,
-          fontWeight: headingWeight,
-          lineHeight: headingLeading,
-        }}
-        className="shrink-0 origin-top-left text-3xl leading-7 font-black tracking-tight lg:sticky lg:top-30 lg:h-[80svh]"
-      >
+      <AnimatedSectionHeading scrollYProgress={scrollYProgress}>
         Here's some of <br /> the good things <br /> I've made
         <span className="text-accent">:</span>
-      </motion.h2>
+      </AnimatedSectionHeading>
       <motion.div
         initial={false}
         style={mounted ? { opacity: imageOpacity } : {}}
