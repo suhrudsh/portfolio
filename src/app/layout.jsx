@@ -1,6 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
 import { LenisProvider } from "@/components/LenisProvider";
 import { Footer } from "@/components/Footer";
 
@@ -75,6 +76,7 @@ export default function RootLayout({ children }) {
           <main className="px-6 lg:px-16 xl:px-24">{children}</main>
         </LenisProvider>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
