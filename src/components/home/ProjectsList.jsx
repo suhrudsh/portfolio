@@ -18,6 +18,9 @@ export default function ProjectsList({ filteredRepos }) {
   for (let i = 0; i < filteredRepos.length; i += 3) {
     chunkedRepos.push(filteredRepos.slice(i, i + 3));
   }
+  const lastPage = Math.max(chunkedRepos.length - 1, 0);
+  const isLeftDisabled = currentPage === 0;
+  const isRightDisabled = currentPage === lastPage;
 
   // --- Format names ---
   const formatRepoName = (name) => {
@@ -33,8 +36,10 @@ export default function ProjectsList({ filteredRepos }) {
   const scrollByPage = (dir) => {
     const nextIdx = Math.max(
       0,
-      Math.min(chunkedRepos.length - 1, currentPage + dir),
+      Math.min(lastPage, currentPage + dir),
     );
+    if (nextIdx === currentPage) return;
+
     groupRefs.current[nextIdx]?.scrollIntoView({
       behavior: "smooth",
       inline: "start",
@@ -62,8 +67,10 @@ export default function ProjectsList({ filteredRepos }) {
       <div className="flex items-stretch justify-center">
         {/* Left scroll button */}
         <button
+          type="button"
+          disabled={isLeftDisabled}
           onClick={() => scrollByPage(-1)}
-          className="bg-background text-text hover:text-accent flex cursor-pointer items-center justify-center self-stretch px-4 text-2xl transition-colors"
+          className="bg-background text-text hover:text-accent disabled:text-text-300 disabled:hover:text-text-300 flex cursor-pointer items-center justify-center self-stretch px-4 text-2xl transition-colors disabled:cursor-not-allowed"
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
@@ -108,8 +115,10 @@ export default function ProjectsList({ filteredRepos }) {
 
         {/* Right scroll button */}
         <button
+          type="button"
+          disabled={isRightDisabled}
           onClick={() => scrollByPage(1)}
-          className="bg-background text-text hover:text-accent flex cursor-pointer items-center justify-center self-stretch px-4 text-2xl transition-colors"
+          className="bg-background text-text hover:text-accent disabled:text-text-300 disabled:hover:text-text-300 flex cursor-pointer items-center justify-center self-stretch px-4 text-2xl transition-colors disabled:cursor-not-allowed"
         >
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
