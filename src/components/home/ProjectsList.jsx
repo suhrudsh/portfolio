@@ -103,8 +103,11 @@ export default function ProjectsList({ filteredRepos }) {
                     <span className="group-hover:text-accent text-lg font-medium tracking-tight text-balance transition-colors">
                       {formatRepoName(repo.name)}
                     </span>
-                    <span className="text-text-400 group-hover:text-text mt-4 text-sm transition-colors">
-                      Click to Visit →
+                    <span className="text-text-400 group-hover:text-text mt-4 inline-flex items-center gap-2 text-[0.58rem] font-medium tracking-[0.16em] uppercase transition-colors sm:text-[0.62rem] sm:tracking-[0.18em] lg:text-[0.7rem] lg:tracking-[0.2em]">
+                      <span>Click to visit</span>
+                      <span className="text-accent" aria-hidden="true">
+                        →
+                      </span>
                     </span>
                   </a>
                 );

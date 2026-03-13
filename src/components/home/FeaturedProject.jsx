@@ -22,8 +22,11 @@ export function FeaturedProject({ link, imgSrc, imgAlt, title, children }) {
         {children && (
           <>
             <br />
-            <span className="text-primary-400 group-hover:text-primary inline transition-colors duration-300 ease-in-out">
-              Click to Visit →
+            <span className="text-text-500 group-hover:text-text mt-4 inline-flex items-center gap-3 text-[0.65rem] font-medium tracking-[0.2em] uppercase transition-colors duration-300 ease-in-out sm:text-xs sm:tracking-[0.24em] lg:text-sm lg:tracking-[0.28em]">
+              <span>Click to visit</span>
+              <span className="text-accent" aria-hidden="true">
+                →
+              </span>
             </span>
           </>
         )}
