@@ -149,7 +149,7 @@ export function Philosophy() {
           </div>
         </div>
       ) : (
-        <div className="sticky top-0 grid h-screen grid-cols-12 grid-rows-6 px-8 pt-24">
+        <div className="sticky top-0 grid h-screen grid-cols-12 grid-rows-6 pt-24">
           <div className="col-span-full row-span-3 flex flex-col">
             <AnimatedSectionHeading
               scrollYProgress={scrollYProgress}
