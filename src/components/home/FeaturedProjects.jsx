@@ -33,7 +33,7 @@ export function FeaturedProjects() {
   return (
     <section
       ref={sectionRef}
-      className="relative mt-36 flex flex-col gap-8 lg:flex-row"
+      className="relative mt-16 flex flex-col gap-8 md:mt-24 lg:mt-36 lg:flex-row"
     >
       <AnimatedSectionHeading scrollYProgress={scrollYProgress}>
         Here's some of <br /> the good things <br /> I've made
