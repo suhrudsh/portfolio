@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LenisProvider } from "@/components/LenisProvider";
 import { Footer } from "@/components/Footer";
 
@@ -77,6 +78,7 @@ export default function RootLayout({ children }) {
         </LenisProvider>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
