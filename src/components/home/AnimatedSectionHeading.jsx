@@ -9,11 +9,10 @@ export function AnimatedSectionHeading({
   sticky = true,
   children,
 }) {
-  const isMobile = useIsMobile();
-  const isLg = useIsMobile(1024);
+  const isBelowLg = useIsMobile(1024);
 
-  const fromSize = isMobile ? "1.875rem" : isLg ? "3.75rem" : "6rem";
-  const toSize = isMobile ? "1.875rem" : isLg ? "2.25rem" : "2.25rem";
+  const fromSize = isBelowLg ? "1.875rem" : "6rem";
+  const toSize = isBelowLg ? "1.875rem" : "2.25rem";
 
   const headingSizeRaw = useTransform(
     scrollYProgress,
@@ -25,8 +24,8 @@ export function AnimatedSectionHeading({
     damping: 20,
   });
 
-  const fromLeading = isMobile ? "1.875rem" : isLg ? "3.75rem" : "6rem";
-  const toLeading = isMobile ? "1.875rem" : isLg ? "2.25rem" : "2.25rem";
+  const fromLeading = isBelowLg ? "1.875rem" : "6rem";
+  const toLeading = isBelowLg ? "1.875rem" : "2.25rem";
 
   const headingLeadingRaw = useTransform(
     scrollYProgress,
@@ -41,7 +40,7 @@ export function AnimatedSectionHeading({
   const headingWeightRaw = useTransform(
     scrollYProgress,
     [0, 0.1],
-    isMobile ? ["700", "700"] : ["900", "700"],
+    isBelowLg ? ["700", "700"] : ["900", "700"],
   );
   const headingWeight = useSpring(headingWeightRaw, {
     stiffness: 100,

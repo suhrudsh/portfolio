@@ -1,10 +1,9 @@
 "use client";
 
-//TO-DO: Deal with this shit later
-
 import { AnimatedSectionHeading } from "@/components/home/AnimatedSectionHeading";
-import { useRef, useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const HEADINGS = [
   {
@@ -89,6 +88,7 @@ function getActiveHeadingIndex(progress) {
 }
 
 export function Philosophy() {
+  const isBelowLg = useIsMobile(1024);
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -119,51 +119,80 @@ export function Philosophy() {
   }, [scrollYProgress]);
 
   return (
-    <section ref={sectionRef} className="relative h-[800svh]">
-      {/* Sticky content */}
-      <div className="sticky top-0 grid h-screen grid-cols-12 grid-rows-6 px-8 pt-24">
-        <div className="col-span-full row-span-3 flex flex-col">
+    <section
+      ref={sectionRef}
+      className={`relative ${isBelowLg ? "mt-24" : "h-[800svh]"}`}
+    >
+      {isBelowLg ? (
+        <div className="flex flex-col gap-10">
           <AnimatedSectionHeading
             scrollYProgress={scrollYProgress}
             sticky={false}
-            className="mb-4"
+            className="mb-2"
           >
             What makes good
             <br />
             things take time?
           </AnimatedSectionHeading>
-          {HEADINGS.map(({ word }, index) => (
-            <motion.h3
-              key={word}
-              animate={{
-                color:
-                  activeIndex === index
-                    ? "var(--color-accent)"
-                    : "var(--color-text)",
-              }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              style={{ y: headingOffsets[index] }}
-              className="w-full text-8xl font-black tracking-tight"
-            >
-              {word}
-            </motion.h3>
-          ))}
-        </div>
 
-        <div className="col-span-full col-start-7 row-span-full row-start-4 flex h-full max-w-[38ch] items-center text-2xl leading-relaxed text-pretty">
-          {activeIndex >= 0 && (
-            <motion.div
-              key={HEADINGS[activeIndex].word}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
-            >
-              <p>{HEADINGS[activeIndex].paragraph}</p>
-            </motion.div>
-          )}
+          <div className="flex flex-col gap-8">
+            {HEADINGS.map(({ word, paragraph }) => (
+              <div key={word} className="flex flex-col gap-3">
+                <h3 className="text-4xl font-black tracking-tight md:text-6xl">
+                  {word}
+                </h3>
+                <div className="max-w-[34ch] text-lg leading-relaxed text-pretty md:text-xl">
+                  <p>{paragraph}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="sticky top-0 grid h-screen grid-cols-12 grid-rows-6 px-8 pt-24">
+          <div className="col-span-full row-span-3 flex flex-col">
+            <AnimatedSectionHeading
+              scrollYProgress={scrollYProgress}
+              sticky={false}
+              className="mb-4"
+            >
+              What makes good
+              <br />
+              things take time?
+            </AnimatedSectionHeading>
+            {HEADINGS.map(({ word }, index) => (
+              <motion.h3
+                key={word}
+                animate={{
+                  color:
+                    activeIndex === index
+                      ? "var(--color-accent)"
+                      : "var(--color-text)",
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                style={{ y: headingOffsets[index] }}
+                className="w-full text-7xl font-black tracking-tight xl:text-8xl"
+              >
+                {word}
+              </motion.h3>
+            ))}
+          </div>
+
+          <div className="col-span-full col-start-7 row-span-full row-start-4 flex h-full max-w-[38ch] items-center text-xl leading-relaxed text-pretty xl:col-start-7 xl:text-2xl">
+            {activeIndex >= 0 && (
+              <motion.div
+                key={HEADINGS[activeIndex].word}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.2 }}
+              >
+                <p>{HEADINGS[activeIndex].paragraph}</p>
+              </motion.div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
