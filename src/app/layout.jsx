@@ -13,9 +13,9 @@ const satoshi = localFont({
 });
 
 export const metadata = {
-  title: "Suhrud Shringarputale | Interaction Designer",
+  title: "Suhrud Shringarputale | Web designer x developer",
   description:
-    "Suhrud is an interaction designer blending 3D, web, and UX to build interactive and meaningful experiences.",
+    "Suhrud is a web designer and developer blending 3D, web, and UX to build interactive and meaningful experiences.",
   keywords: [
     "Suhrud",
     "Designer",
@@ -27,9 +27,9 @@ export const metadata = {
     "Portfolio",
   ],
   openGraph: {
-    title: "Suhrud Shringarputale | Interaction Designer",
+    title: "Suhrud Shringarputale | Web designer x developer",
     description:
-      "Suhrud is a designer and developer crafting immersive web experiences at the intersection of design and code.",
+      "Suhrud is a web designer and developer crafting immersive web experiences at the intersection of design and code.",
     url: "https://suhrud.vercel.app", // Replace with your live domain
     siteName: "Suhrud Portfolio",
     images: [
@@ -44,9 +44,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suhrud Shringarputale | Interaction Designer",
+    title: "Suhrud Shringarputale | Web designer x developer",
     description:
-      "Portfolio of Suhrud – designer and frontend developer focused on 3D and interactive experiences.",
+      "Portfolio of Suhrud - web designer and developer focused on 3D and interactive experiences.",
     images: ["/og-image.jpg"],
   },
   robots: {
