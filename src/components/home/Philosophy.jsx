@@ -15,7 +15,7 @@ const HEADINGS = [
       <>
         I’ve found I can’t design for something I don’t understand.
         <br />
-        So I start by listening — to the people, the problem, the messy context
+        So I start by listening. To the people, the problem, the messy context
         around it.
         <br />
         I ask questions. I dig. I try to understand what’s really going on.
@@ -39,8 +39,8 @@ const HEADINGS = [
       <>
         Once the work feels meaningful, I can’t help but slow down.
         <br />
-        I start obsessing over the details — every line, every interaction,
-        every choice.
+        I start obsessing over the details. Every line, every interaction, every
+        choice.
         <br />
         Each part needs to serve the core idea.
         <br />
@@ -63,11 +63,11 @@ const HEADINGS = [
       <>
         So, what makes good things take time?
         <br />
-        For me, it’s the desire to contribute — to create something that doesn’t
+        For me, it’s the desire to contribute. To create something that doesn’t
         just look good, but gives something back.
         <br />
         When I feel connected to the people and the problem, I want to make work
-        that helps — in quiet, practical ways.
+        that helps, in quiet, practical ways.
         <br />
         Smoothing friction, supporting goals, bringing clarity.
         <br />
