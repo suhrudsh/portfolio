@@ -67,7 +67,7 @@ const HEADINGS = [
         just look good, but gives something back.
         <br />
         When I feel connected to the people and the problem, I want to make work
-        that helps, in quiet, practical ways.
+        that helps, .. in quiet, practical ways.
         <br />
         Smoothing friction, supporting goals, bringing clarity.
         <br />
@@ -158,7 +158,7 @@ export function Philosophy() {
               <motion.h3
                 key={word}
                 style={{ y: desktopHeadingOffsets[index] }}
-                className={`w-full text-7xl font-black tracking-tight transition-colors duration-200 xl:text-8xl ${
+                className={`w-full text-7xl font-black tracking-tight transition-colors duration-200 2xl:text-8xl ${
                   activeIndex === index ? "text-accent" : "text-text"
                 }`}
               >
@@ -167,7 +167,7 @@ export function Philosophy() {
             ))}
           </div>
 
-          <div className="col-span-full col-start-7 row-span-full row-start-4 flex h-full max-w-[38ch] items-center text-xl leading-relaxed text-pretty xl:col-start-7 xl:text-2xl">
+          <div className="col-span-full col-start-7 row-span-full row-start-4 flex h-full max-w-[38ch] items-center text-xl leading-relaxed text-pretty xl:col-start-7 2xl:text-2xl">
             {activeIndex >= 0 && (
               <motion.div
                 key={HEADINGS[activeIndex].word}

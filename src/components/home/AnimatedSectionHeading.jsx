@@ -10,8 +10,9 @@ export function AnimatedSectionHeading({
   children,
 }) {
   const isBelowLg = useIsMobile(1024);
+  const isBelow2Xl = useIsMobile(1536)
 
-  const fromSize = isBelowLg ? "1.875rem" : "6rem";
+  const fromSize = isBelowLg ? "1.875rem" : isBelow2Xl ? "4.5rem" : "6rem";
   const toSize = isBelowLg ? "1.875rem" : "2.25rem";
 
   const headingSizeRaw = useTransform(
@@ -24,7 +25,7 @@ export function AnimatedSectionHeading({
     damping: 20,
   });
 
-  const fromLeading = isBelowLg ? "1.875rem" : "6rem";
+  const fromLeading = isBelowLg ? "1.875rem" :  isBelow2Xl ? "4.5rem" : "6rem";
   const toLeading = isBelowLg ? "1.875rem" : "2.25rem";
 
   const headingLeadingRaw = useTransform(
