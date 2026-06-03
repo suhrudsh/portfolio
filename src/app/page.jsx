@@ -39,7 +39,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <Philosophy />
+      {/* <Philosophy /> */}
       <FeaturedProjects />
       <ProjectsList filteredRepos={filteredRepos} />
     </>

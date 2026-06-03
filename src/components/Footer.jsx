@@ -56,7 +56,7 @@ export function Footer() {
               </div>
 
               <p className="text-text-300 max-w-xs text-sm leading-relaxed text-balance sm:text-base">
-                Available for thoughtful web design and development work.
+                Available for creative web development work.
               </p>
 
               <p className="text-text-400 text-sm">
