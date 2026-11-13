@@ -10,7 +10,7 @@ export default async function HomePage() {
     "streamsync",
     "lemons-404",
     "auralis-cymbals",
-    "nuranest-website",
+    "3d-marble-metronome",
   ];
 
   const res = await fetch(`https://api.github.com/users/${username}/repos`, {

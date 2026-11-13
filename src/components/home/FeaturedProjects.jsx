@@ -98,17 +98,16 @@ export function FeaturedProjects() {
         </FeaturedProject>
 
         <FeaturedProject
-          link={"https://nuranest.ai"}
-          imgSrc={"/images/nuranest-thumbnail.webp"}
-          imgAlt={"Nuranest.ai Thumbnail"}
-          title={"Nuranest.ai"}
+          link={"https://suhrudsh.github.io/3d-marble-metronome"}
+          imgSrc={"/images/metronome-thumbnail.webp"}
+          imgAlt={"3D Marble Metronome Thumbnail"}
+          title={"3D Marble Metronome"}
         >
-          Nuranest.ai is an operator-led advisory firm for IT services,
-          software, and PE/VC-backed companies. I built a clean,
-          executive-focused site designed to signal credibility fast — using
-          sharp hierarchy, restrained visuals, and messaging rooted in their
-          advisory-first positioning. A tight, trust-driven build delivered
-          quickly.
+          A fun personal project where I created a 3D metronome using Three.js
+          and React. The metronome features a realistic marble texture, smooth
+          animations, and interactive controls to adjust tempo and time
+          signature. This project allowed me to experiment with 3D modeling,
+          lighting, and user interaction in a web environment.
         </FeaturedProject>
 
         <FeaturedProject
