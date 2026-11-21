@@ -13,23 +13,24 @@ const satoshi = localFont({
 });
 
 export const metadata = {
-  title: "Suhrud Shringarputale | Creative Developer",
+  title: "Suhrud Shringarputale | Creative Developer for Design Teams",
   description:
-    "Suhrud is a web designer and developer blending 3D, web, and UX to build interactive and meaningful experiences.",
+    "Suhrud is a creative developer who started out in design. He turns ambitious designs into working websites, with motion, interactive 3D and brand detail intact.",
   keywords: [
     "Suhrud",
-    "Designer",
-    "UX Design",
+    "Creative Developer",
     "Frontend Developer",
+    "React",
+    "Three.js",
+    "GSAP",
     "3D on the Web",
     "Motion Design",
     "WebGL",
-    "Portfolio",
   ],
   openGraph: {
-    title: "Suhrud Shringarputale | Creative Developer",
+    title: "Suhrud Shringarputale | Creative Developer for Design Teams",
     description:
-      "Suhrud is a web designer and developer crafting immersive web experiences at the intersection of design and code.",
+      "Suhrud is a creative developer who started out in design. He turns ambitious designs into working websites, with motion, interactive 3D and brand detail intact.",
     url: "https://suhrud.vercel.app", // Replace with your live domain
     siteName: "Suhrud Portfolio",
     images: [
@@ -44,9 +45,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suhrud Shringarputale | Creative Developer",
+    title: "Suhrud Shringarputale | Creative Developer for Design Teams",
     description:
-      "Portfolio of Suhrud - web designer and developer focused on 3D and interactive experiences.",
+      "Suhrud is a creative developer who started out in design. He turns ambitious designs into working websites, with motion, interactive 3D and brand detail intact.",
     images: ["/og-image.jpg"],
   },
   robots: {
