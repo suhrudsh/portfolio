@@ -8,7 +8,8 @@ export function Hero() {
           Hey! I’m Suhrud, a creative developer.
           <br />
           <span className="block text-4xl font-black tracking-tight md:text-6xl lg:text-6xl lg:leading-15 xl:text-7xl 2xl:text-8xl xl:leading-18 2xl:leading-24">
-            I build the motion and 3D <br /> your designers imagined
+            I turn your designs into <br className="hidden lg:block" /> motion
+            and 3D on the web
             <span className="text-accent">.</span>
           </span>
         </h1>
