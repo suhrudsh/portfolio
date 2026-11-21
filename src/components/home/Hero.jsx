@@ -8,7 +8,7 @@ export function Hero() {
           Hey! I’m Suhrud, a creative developer who started out in design.
           <br />
           <span className="block text-4xl font-black tracking-tight text-balance md:text-6xl lg:text-6xl lg:leading-15 xl:text-7xl 2xl:text-8xl xl:leading-18 2xl:leading-24">
-            So design the ambitious version.{" "}
+            So design the ambitious version,{" "}
             <br className="hidden lg:block" /> I’ll build it
             <span className="text-accent">.</span>
           </span>
