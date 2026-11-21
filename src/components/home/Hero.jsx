@@ -14,7 +14,7 @@ export function Hero() {
           </span>
         </h1>
         <div className="flex gap-8">
-          <CTA primary href={"mailto:suhrudsh@gmail.com"}>
+          <CTA primary href={"mailto:hello@suhrud.dev"}>
             Get in touch
           </CTA>
           {/* <CTA secondary>See my work</CTA> */}

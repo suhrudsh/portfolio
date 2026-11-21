@@ -32,7 +32,7 @@ export default function Navbar() {
       <Link href="/" className="w-1/2 text-xl font-bold">
         Suhrud Shringarputale
       </Link>
-      <CTA href={"mailto:suhrudsh@gmail.com"} primary navbar>
+      <CTA href={"mailto:hello@suhrud.dev"} primary navbar>
         Get in touch
       </CTA>
     </nav>

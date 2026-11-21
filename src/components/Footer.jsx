@@ -9,17 +9,15 @@ export function Footer() {
         <div className="border-text-700/70 flex flex-col gap-12 border-t pt-6 sm:pt-8">
           <div className="flex flex-col gap-12 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-3xl leading-none font-black tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-                Got a design that
-                <br />
-                needs to move
+              <p className="text-3xl leading-none font-black tracking-tight text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
+                Got a design you think can&apos;t be built
                 <span className="text-accent">?</span>
               </p>
               <a
-                href="mailto:suhrudsh@gmail.com"
+                href="mailto:hello@suhrud.dev"
                 className="text-text-300 hover:text-text-50 mt-6 inline-flex w-fit items-center gap-3 text-sm font-medium tracking-[0.18em] uppercase transition-colors duration-300 ease-in-out sm:text-base"
               >
-                Get in touch
+                Send it over
                 <span className="text-accent" aria-hidden="true">
                   →
                 </span>
@@ -47,7 +45,7 @@ export function Footer() {
                   <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
                 </a>
                 <a
-                  href="mailto:suhrudsh@gmail.com"
+                  href="mailto:hello@suhrud.dev"
                   aria-label="Email"
                   className="border-text-700 text-text-100 hover:border-text-500 hover:text-accent flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300 ease-in-out hover:-translate-y-0.5"
                 >
@@ -56,7 +54,7 @@ export function Footer() {
               </div>
 
               <p className="text-text-300 max-w-xs text-sm leading-relaxed text-balance sm:text-base">
-                Available for creative development work.
+                Open to projects with design teams and studios.
               </p>
 
               <p className="text-text-400 text-sm">
