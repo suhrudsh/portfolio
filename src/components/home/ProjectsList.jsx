@@ -60,8 +60,8 @@ export default function ProjectsList({ filteredRepos }) {
   return (
     <section className="mt-12 flex w-full flex-col gap-8">
       <h2 className="text-3xl font-bold xl:text-4xl">
-        And the rest — <br />
-        still good, just smaller<span className="text-accent">.</span>
+        And the rest: <br />
+        smaller experiments<span className="text-accent">.</span>
       </h2>
 
       <div className="flex items-stretch justify-center">

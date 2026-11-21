@@ -36,7 +36,7 @@ export function FeaturedProjects() {
       className="relative mt-16 flex flex-col gap-8 md:mt-24 lg:mt-36 lg:flex-row"
     >
       <AnimatedSectionHeading scrollYProgress={scrollYProgress}>
-        Here's some of <br /> the good things <br /> I've made
+        Here's some of <br /> what I've <br /> built
         <span className="text-accent">:</span>
       </AnimatedSectionHeading>
       <motion.div

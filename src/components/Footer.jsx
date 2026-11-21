@@ -10,10 +10,10 @@ export function Footer() {
           <div className="flex flex-col gap-12 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-3xl leading-none font-black tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-                Let&apos;s make good
+                Got a design that
                 <br />
-                things together
-                <span className="text-accent">.</span>
+                needs to move
+                <span className="text-accent">?</span>
               </p>
               <a
                 href="mailto:suhrudsh@gmail.com"
